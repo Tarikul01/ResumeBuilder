@@ -84,6 +84,10 @@ const Profile = () => {
                                         <input  key={Date.now()} defaultValue={ProfileData['firstName']} ref={(input)=>firstNameRef=input} placeholder="First Name" className="form-control animated fadeInUp" type="text"/>
                                     </div>
                                     <div className="col-4 p-2">
+                                        <label>First Name</label>
+                                        <input  key={Date.now()} defaultValue={ProfileData['firstName']} ref={(input)=>firstNameRef=input} placeholder="First Name" className="form-control animated fadeInUp" type="text"/>
+                                    </div>
+                                    <div className="col-4 p-2">
                                         <label>Last Name</label>
                                         <input key={Date.now()} defaultValue={ProfileData['lastName']}  ref={(input)=>lastNameRef=input} placeholder="Last Name" className="form-control animated fadeInUp" type="text"/>
                                     </div>
