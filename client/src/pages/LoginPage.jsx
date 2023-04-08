@@ -14,8 +14,8 @@ const LoginPage = () => {
     console.log(userData);
   };
   return (
-    <div className="w-full h-screen container mx-auto flex justify-center items-center">
-      <div className="w-1/3 h-auto bg-black text-teal-600	 text-center p-5 rounded-lg ">
+    <div className="w-full h-screen container mx-auto flex justify-center items-center p-5">
+      <div className="w-1/3  h-auto bg-gray-800 text-teal-600	 text-center p-5 rounded-lg ">
         <h1 className="text-4xl font-bold text-teal-400	">Login</h1>
         <div className="flex flex-col gap-4 px-14 py-8">
           <input
