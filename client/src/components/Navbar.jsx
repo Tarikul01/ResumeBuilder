@@ -1,19 +1,25 @@
 import React, { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import {
+  AiFillLinkedin,
+  AiOutlineClose,
+  AiOutlineInstagram,
+  AiOutlineMenu,
+} from "react-icons/ai";
+import { BsTwitter } from "react-icons/bs";
+import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  console.log("toggle", toggle);
   const loginHandler = () => {};
   return (
     <>
-      <nav className="h-20 w-full flex flex-row justify-center items-center bg-indigo-400 ">
+      <nav className="h-20 w-full flex flex-row justify-center items-center bg-indigo-400 z-[99999] fixed">
         <div className="container px-5 md:px-0 flex justify-between items-center ">
           <div>
             <h1 className="font-semibold">ResumeCraft</h1>
           </div>
           <div className="hidden lg:block">
-            <ui className="list-none flex items-center gap-6 text-white">
+            <ul className="list-none flex items-center gap-6 text-white">
               <li>
                 <Link to="/">Resume Templates</Link>
               </li>
@@ -29,23 +35,23 @@ const Navbar = () => {
               <li>
                 <Link to="/">Pricing</Link>
               </li>
-            </ui>
+            </ul>
           </div>
           <div>
-            <ui className="list-none flex items-center gap-6">
-              <li>
-                <button className="px-6 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors duration-400">
+            <ul className="list-none flex items-center gap-6">
+              <li className="hidden md:block">
+                <button className="px-6 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors   ease-in-out duration-500">
                   Sign Up
                 </button>
               </li>
-              <li>
-                <button className="px-6 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors duration-400">
+              <li className="hidden md:block">
+                <button className="px-6 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors  ease-in-out duration-400">
                   Login
                 </button>
               </li>
               <li>
                 <i
-                  className="text-white cursor-pointer "
+                  className="text-white cursor-pointer block lg:hidden"
                   onClick={() => setToggle(!toggle)}
                 >
                   {toggle ? (
@@ -55,64 +61,105 @@ const Navbar = () => {
                   )}
                 </i>
               </li>
-            </ui>
+            </ul>
           </div>
         </div>
       </nav>
       {/* // Mobile Version */}
-      <nav
-        className={
-          toggle
-            ? `w-1/3 h-screen bg-white z-10 transition duration-500`
-            : `hidden`
-        }
-      >
-        <div className="container flex flex-col justify-start items-center pt-16">
-          <div>
-            <ui className="list-none flex flex-col items-center gap-6">
-              <li>
-                <button className="px-12 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors duration-400">
-                  Sign Up
-                </button>
-              </li>
-              <li>
-                <button className="px-12 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors duration-400">
-                  Login
-                </button>
-              </li>
-              <li>
-                <i
-                  className="text-white cursor-pointer "
-                  onClick={() => setToggle(!toggle)}
-                >
-                  {toggle ? (
-                    <AiOutlineClose size={25} />
-                  ) : (
-                    <AiOutlineMenu size={25} />
-                  )}
-                </i>
-              </li>
-            </ui>
-          </div>
-          <hr />
-          <div>
-            <ui className="list-none flex flex-col items-center gap-6 text-black">
-              <li>
-                <Link to="/">Resume Templates</Link>
-              </li>
-              <li>
-                <Link to="/">CV Templates</Link>
-              </li>
-              <li>
-                <Link to="/">Cover Letters</Link>
-              </li>
-              <li>
-                <Link to="/">Career Blog </Link>
-              </li>
-              <li>
-                <Link to="/">Pricing</Link>
-              </li>
-            </ui>
+      <nav>
+        <div
+          className={
+            toggle
+              ? ` h-screen bg-white fixed z-10 ease-in-out duration-500   right-0 top-20 w-[100%]  md:w-[30%]`
+              : `fixed right-[-100%] h-screen w-full  top-20 p-10 z-10 ease-in-out duration-500`
+          }
+        >
+          <div className="container flex flex-col justify-center items-center pt-16 px-6">
+            <div>
+              <ul className="list-none flex flex-col items-center gap-6">
+                <li>
+                  <button className="px-12 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors  ease-in-out duration-400">
+                    Sign Up
+                  </button>
+                </li>
+                <li>
+                  <button className="px-12 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors ease-in-out duration-400">
+                    Login
+                  </button>
+                </li>
+                <li>
+                  <i
+                    className="text-white cursor-pointer "
+                    onClick={() => setToggle(!toggle)}
+                  >
+                    {toggle ? (
+                      <AiOutlineClose size={25} />
+                    ) : (
+                      <AiOutlineMenu size={25} />
+                    )}
+                  </i>
+                </li>
+              </ul>
+            </div>
+            <div className=" w-full  pb-10">
+              <hr />
+            </div>
+
+            <div>
+              <ul className="list-none flex flex-col items-center gap-6 text-md text-gray-600 ">
+                <li className="hover:text-indigo-600">
+                  <Link to="/">Resume Templates</Link>
+                </li>
+                <li className="hover:text-indigo-600">
+                  <Link to="/">CV Templates</Link>
+                </li>
+                <li className="hover:text-indigo-600">
+                  <Link to="/">Cover Letters</Link>
+                </li>
+                <li className="hover:text-indigo-600">
+                  <Link to="/">Career Blog </Link>
+                </li>
+                <li className="hover:text-indigo-600">
+                  <Link to="/">Pricing</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="w-full  py-10">
+              <hr />
+            </div>
+            <div className="pb-6">
+              <h2 className="text-lg font-semibold text-gray-700">About Us</h2>
+            </div>
+            <div className="pb-3">
+              <ul className="flex gap-5 text-white">
+                <li className="p-3 w-full h-full rounded-full bg-indigo-600 hover:bg-indigo-900 cursor-pointer transition-colors ease-in-out duration-500">
+                  <Link to="/">
+                    <FaFacebookF size={20} />
+                  </Link>
+                </li>
+                <li className="p-3 w-full h-full rounded-full bg-indigo-600 hover:bg-indigo-900 cursor-pointer transition-colors ease-in-out duration-500">
+                  <Link to="/">
+                    <AiFillLinkedin size={20} />
+                  </Link>
+                </li>
+                <li className="p-3 w-full h-full rounded-full bg-indigo-600 hover:bg-indigo-900 cursor-pointer transition-colors ease-in-out duration-500">
+                  <Link to="/">
+                    <BsTwitter size={20} />
+                  </Link>
+                </li>
+                <li className="p-3 w-full h-full rounded-full bg-indigo-600 hover:bg-indigo-900 cursor-pointer transition-colors ease-in-out duration-500">
+                  <Link to="/">
+                    <AiOutlineInstagram size={20} />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <Link className="text-gray-500 text-sm" to="/">
+              email@resumecraft.com
+            </Link>
+            <Link className="text-gray-500 text-sm" to="/">
+              Help center
+            </Link>
           </div>
         </div>
       </nav>
