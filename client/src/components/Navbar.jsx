@@ -8,8 +8,12 @@ import {
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import LoginPage from "../pages/LoginPage";
+import Modal from "./Modal";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [showModal1, setShowModal1] = useState(false);
   const loginHandler = () => {};
   return (
     <>
@@ -40,7 +44,10 @@ const Navbar = () => {
           <div>
             <ul className="list-none flex items-center gap-6">
               <li className="hidden md:block">
-                <button className="px-6 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors   ease-in-out duration-500">
+                <button
+                  className="px-6 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors   ease-in-out duration-500"
+                  onClick={() => setShowModal(!showModal)}
+                >
                   Sign Up
                 </button>
               </li>
@@ -163,6 +170,13 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      <Modal isVisible={showModal} onClose={() => setShowModal(!showModal)}>
+        <LoginPage />
+      </Modal>
+      <Modal isVisible={showModal1} onClose={() => setShowModal(!showModal1)}>
+        <LoginPage />
+      </Modal>
     </>
   );
 };
