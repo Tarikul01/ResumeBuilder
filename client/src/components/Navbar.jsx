@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import {
   AiFillLinkedin,
@@ -9,12 +10,13 @@ import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
+import SignUpPage from "../pages/SignUpPage";
 import Modal from "./Modal";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showModal1, setShowModal1] = useState(false);
-  const loginHandler = () => {};
+
   return (
     <>
       <nav className="h-20 w-full flex flex-row justify-center items-center bg-indigo-400 z-[99999] fixed">
@@ -52,7 +54,10 @@ const Navbar = () => {
                 </button>
               </li>
               <li className="hidden md:block">
-                <button className="px-6 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors  ease-in-out duration-400">
+                <button
+                  className="px-6 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors  ease-in-out duration-400"
+                  onClick={() => setShowModal1(!showModal1)}
+                >
                   Login
                 </button>
               </li>
@@ -73,11 +78,17 @@ const Navbar = () => {
         </div>
       </nav>
       {/* // Mobile Version */}
-      <nav>
-        <div
+      <nav
+        className={
+          toggle
+            ? `fixed inset-0  bg-white bg-opacity-25  backdrop-blur-lg	ease-in-out duration-500`
+            : null
+        }
+      >
+        <motion.div
           className={
             toggle
-              ? ` h-screen bg-white fixed z-10 ease-in-out duration-500   right-0 top-20 w-[100%]  md:w-[30%]`
+              ? ` h-screen bg-white drop-shadow-lg fixed z-10   right-0 top-20 w-[100%]  md:w-[30%]  ease-in-out duration-500`
               : `fixed right-[-100%] h-screen w-full  top-20 p-10 z-10 ease-in-out duration-500`
           }
         >
@@ -85,12 +96,18 @@ const Navbar = () => {
             <div>
               <ul className="list-none flex flex-col items-center gap-6">
                 <li>
-                  <button className="px-12 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors  ease-in-out duration-400">
+                  <button
+                    className="px-12 py-1 text-md bg-white hover:bg-gray-200  text-indigo-600 rounded-3xl shadow-lg transition-colors  ease-in-out duration-400"
+                    onClick={() => setShowModal(!showModal) || setToggle()}
+                  >
                     Sign Up
                   </button>
                 </li>
                 <li>
-                  <button className="px-12 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors ease-in-out duration-400">
+                  <button
+                    className="px-12 py-1 text-md bg-indigo-500 hover:bg-indigo-700 text-white rounded-3xl shadow-lg transition-colors ease-in-out duration-400"
+                    onClick={() => setShowModal1(!showModal1) || setToggle()}
+                  >
                     Login
                   </button>
                 </li>
@@ -168,14 +185,14 @@ const Navbar = () => {
               Help center
             </Link>
           </div>
-        </div>
+        </motion.div>
       </nav>
 
       <Modal isVisible={showModal} onClose={() => setShowModal(!showModal)}>
-        <LoginPage />
+        <SignUpPage onClose={() => setShowModal(!showModal)} />
       </Modal>
       <Modal isVisible={showModal1} onClose={() => setShowModal(!showModal1)}>
-        <LoginPage />
+        <LoginPage onClose={() => setShowModal1(!showModal1)} />
       </Modal>
     </>
   );
