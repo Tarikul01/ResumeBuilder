@@ -20,29 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36170a38-3209-4731-8294-924925896de9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/userController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/aboutSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/eduModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/expModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/models/skillModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/middleware/authVerifyMiddle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/tasksController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/controllers/usersController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/middleware/AuthVerifyMiddleware.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/OTPModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/TasksModel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/Utility/CreateToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Utility/CreateToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/routers/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routers/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/user/UserCreateService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/user/UserDetailsService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/user/UserLoginService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/user/UserResetPassword.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/user/UserUpdateProfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/user/UserVerifyEmailService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/services/user/UserVerifyOtpService.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +72,8 @@
       <workItem from="1680896099413" duration="1336000" />
       <workItem from="1680897555505" duration="170000" />
       <workItem from="1680947634155" duration="3793000" />
-      <workItem from="1680953265405" duration="8834000" />
+      <workItem from="1680953265405" duration="15123000" />
+      <workItem from="1681138727263" duration="3530000" />
     </task>
     <servers />
   </component>
