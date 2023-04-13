@@ -1,9 +1,10 @@
 import React from "react";
+import Button from "./Button";
 
 const Hero = () => {
   return (
     <section
-      className=" w-full h-screen object-fit bg-center bg-cover bg-no-repeat bg-white flex justify-center items-center "
+      className=" w-full min-h-screen object-fit bg-center bg-cover bg-no-repeat bg-white flex justify-center items-center "
       style={{
         backgroundImage: ` url("../../public/assets/img/wave-haikei (1).svg")`,
       }}
@@ -16,10 +17,8 @@ const Hero = () => {
           The online resume builder getting folks hired by BBC, Google, Apple,
           Tesla, and Airbnb.
         </p>
-        <button className="  py-3 px-8 bg-indigo-500 hover:bg-indigo-700 rounded-full text-white  ease-in-out duration-500">
-          Build Resume{" "}
-        </button>
-        <p className="text-gray-600">Try it for free.</p>
+        <Button> Build Resume</Button>
+        <p className="text-gray-600 mt-2">Try it for free.</p>
       </div>
     </section>
   );
