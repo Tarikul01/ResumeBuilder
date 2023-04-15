@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import ResumePage from "./pages/ResumePage";
 import SignUpPage from "./pages/SignUpPage";
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/resume-templates" element={<ResumePage />} />
 
         <Route path="/registration" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />

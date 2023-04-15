@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="hidden lg:block">
             <ul className="list-none flex items-center gap-6 text-white">
               <li>
-                <Link to="/">Resume Templates</Link>
+                <Link to="/resume-templates">Resume Templates</Link>
               </li>
               <li>
                 <Link to="/">CV Templates</Link>
@@ -132,7 +132,7 @@ const Navbar = () => {
             <div>
               <ul className="list-none flex flex-col items-center gap-6 text-md text-gray-600 ">
                 <li className="hover:text-indigo-600">
-                  <Link to="/">Resume Templates</Link>
+                  <Link to="/resume-templates">Resume Templates</Link>
                 </li>
                 <li className="hover:text-indigo-600">
                   <Link to="/">CV Templates</Link>

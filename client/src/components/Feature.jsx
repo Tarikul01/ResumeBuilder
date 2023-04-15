@@ -1,7 +1,25 @@
 import React from "react";
 import Button from "./Button";
+import FeatureItem from "./FeatureItem";
 
 const Feature = () => {
+  const featureData = [
+    {
+      imgURL: "../../public/assets/img/template0.png",
+      title: "Creative Resume Template",
+      desc: "A resume template as creative as your imagination",
+    },
+    {
+      imgURL: "../../public/assets/img/template1.png",
+      title: "Professional Resume template",
+      desc: "A resume template as creative as your imagination",
+    },
+    {
+      imgURL: "../../public/assets/img/template1.png",
+      title: "College Resume Template",
+      desc: "A resume template as creative as your imagination",
+    },
+  ];
   return (
     <section className=" py-16">
       <div className="container mx-auto flex flex-col justify-center items-center text-center">
@@ -19,21 +37,13 @@ const Feature = () => {
           </p>
         </div>
         <div className="w-full mt-12 flex flex-wrap justify-center gap-10">
-          <div className="w-80 ">
-            <img
-              className="w-full"
-              src="../../public/assets/img/template0.png"
-              alt=""
-            />
-            <div className="text-left mt-5">
-              <h3 className="text-xl font-semibold">
-                {" "}
-                Creative Resume Template
-              </h3>
-              <p>A resume template as creative as your imagination</p>
-            </div>
-          </div>
-          <div className="w-80">
+          {featureData.map((item, i) => {
+            const { imgURL, title, desc } = item;
+            return (
+              <FeatureItem key={i} imgURL={imgURL} title={title} desc={desc} />
+            );
+          })}
+          {/* <div className="w-80">
             <img
               className="w-full"
               src="../../public/assets/img/template1.png"
@@ -60,7 +70,7 @@ const Feature = () => {
               </h3>
               <p>A resume template as creative as your imagination</p>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="mt-10">
           <Button>Discover More Resume Templates</Button>
