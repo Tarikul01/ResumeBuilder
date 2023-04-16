@@ -41,11 +41,10 @@ app.use(limiter);
 
 // Database connections
 const options = { user: "", pass: "", autoIndex: true };
-const MONGO_URL = process.env.MONGO_URL||"mongodb://0.0.0.0:27017/task_management";
+const MONGO_URL = process.env.MONGO_URL;
 mongoose.connect(MONGO_URL, options, (err) => {
   if (!err) {
     console.log("DB connection success");
-
     console.log("Server Running at port ", MONGO_URL);
     console.log("--------------------------------------------------\n\n\n");
   } else {
@@ -53,7 +52,10 @@ mongoose.connect(MONGO_URL, options, (err) => {
   }
 });
 
+
+
 //Handling CORS
+/*
 app.use((req, res, next) => {
   const devUrls = [
     'http://localhost:5000',
@@ -70,7 +72,7 @@ app.use((req, res, next) => {
     process.env.NODE_ENV === 'DEV' ? devUrls
       : process.env.NODE_ENV === 'PROD' ? prodUrls
         : []
-  
+
   const origin = req.headers.origin || "";
   if (allowedOrigins.includes(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
@@ -85,11 +87,11 @@ app.use((req, res, next) => {
 
   return next();
 });
-
+*/
 
 
 // Managing backend routing 
-app.use("/api/v1", router); 
+app.use("/api/v1", router);
 
 // Front End Taggin 
 // app.use(express.static('client/build'));
