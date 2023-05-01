@@ -141,65 +141,45 @@ const Template0 = () => {
             <h1 className="text-2xl uppercase font-bold text-orange-600">
               Skills
             </h1>
-            <hr className="h-1 my-2 bg-orange-600 w-64" />
+            <hr className="h-1 my-2 bg-orange-600 w-24" />
 
-            <div>
-              <h3 className="text-xl font-semibold">
-                Business Development Manager
-              </h3>
-              <h4 className="text-lg ">AirState Solutions </h4>
-              <div className="w-full flex justify-between text-orange-500 text-sm italic">
-                <span>12/12/1990</span>
-                <span>Newyork, USA</span>
+            <div className="flex flex-col gap-5 mt-5">
+              <div className="flex flex-col justify-start items-start gap-2 ">
+                <h4 className="text-lg ">HTML</h4>
+                <div className="w-full bg-gray-200 rounded-full h-3.5 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-3.5 rounded-full w-[80%]"></div>
+                </div>
               </div>
-              <ul className="list-disc marker:text-orange-500 marker:text-2xl">
-                <li>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
-                  hic maxime odio similique quis et expedita ipsum corporis
-                  magnam suscipit! Quos explicabo quis corrupti illum?
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Reprehenderit ea eos animi sequi minima id ipsam recusandae,
-                  sapiente porro nemo consequatur mollitia quisquam, quidem
-                  dolore delectus magni a
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Facere velit molestias, explicabo quos ea inventore maiores
-                  magnam deleniti sint, dolor unde debitis a sit nulla numquam
-                  voluptas blanditiis officia neque, ut suscipit cum.
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mt-10 text-xl font-semibold">
-                Business Development Manager
-              </h3>
-              <h4 className="text-lg ">AirState Solutions </h4>
-              <div className="w-full flex justify-between text-orange-500 text-sm italic">
-                <span>12/12/1990</span>
-                <span>Newyork, USA</span>
+              <div className="flex flex-col justify-start items-start gap-2 ">
+                <h4 className="text-lg ">CSS</h4>
+                <div className="w-full bg-gray-200 rounded-full h-3.5 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-3.5 rounded-full w-[75%]"></div>
+                </div>
               </div>
-              <ul className="list-disc marker:text-orange-500 marker:text-2xl">
-                <li>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. In
-                  hic maxime odio similique quis et expedita ipsum corporis
-                  magnam suscipit! Quos explicabo quis corrupti illum?
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Reprehenderit ea eos animi sequi minima id ipsam recusandae,
-                  sapiente porro nemo consequatur mollitia quisquam, quidem
-                  dolore delectus magni a
-                </li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Facere velit molestias, explicabo quos ea inventore maiores
-                  magnam deleniti sint, dolor unde debitis a sit nulla numquam
-                  voluptas blanditiis officia neque, ut suscipit cum.
-                </li>
-              </ul>
+              <div className="flex flex-col justify-start items-start gap-2 ">
+                <h4 className="text-lg ">Javascript</h4>
+                <div className="w-full bg-gray-200 rounded-full h-3.5 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-3.5 rounded-full w-[85%]"></div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-2 ">
+                <h4 className="text-lg ">ES6</h4>
+                <div className="w-full bg-gray-200 rounded-full h-3.5 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-3.5 rounded-full w-[80%]"></div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-2 ">
+                <h4 className="text-lg ">REACTJS</h4>
+                <div className="w-full bg-gray-200 rounded-full h-3.5 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-3.5 rounded-full w-[92%]"></div>
+                </div>
+              </div>
+              <div className="flex flex-col justify-start items-start gap-2 ">
+                <h4 className="text-lg ">NODEJS</h4>
+                <div className="w-full bg-gray-200 rounded-full h-3.5 dark:bg-gray-700">
+                  <div className="bg-orange-600 h-3.5 rounded-full w-[75%]"></div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -207,25 +187,48 @@ const Template0 = () => {
             <h1 className="text-2xl uppercase font-bold text-orange-600">
               Organizations
             </h1>
-            <hr className="h-1 my-2 bg-orange-600 w-40" />
-            <div>
-              <h4 className="text-2xl font-bold ">M.Sc in Engineering</h4>
-              <h6 className="text-lg ">University in Chicago, USA</h6>
-              <span className=" text-sm italic text-orange-600">
-                19/10/1990 - 20/12/1994
-              </span>
+            <hr className="h-1 my-2 bg-orange-600 w-56" />
+            <div className="flex flex-col gap-4 mt-5">
+              <div>
+                <h4 className="text-2xl  ">American Management Association</h4>
+                <h6 className="text-lg ">19/10/1990 - 20/12/1994</h6>
+              </div>{" "}
+              <div>
+                <h4 className="text-2xl  ">American Management Association</h4>
+                <h6 className="text-lg ">19/10/1990 - 20/12/1994</h6>
+              </div>
+              <div>
+                <h4 className="text-2xl  ">American Management Association</h4>
+                <h6 className="text-lg ">19/10/1990 - 20/12/1994</h6>
+              </div>
             </div>
           </div>
           <div className="mt-10">
             <h1 className="text-2xl uppercase font-bold text-orange-600">
               Honours and Awards
             </h1>
-            <hr className="h-1 my-2 bg-orange-600 w-40" />
-            <ul className="list-disc list-inside marker:text-orange-600 marker:text-lg">
-              <li>English - Fluent</li>
-              <li>Bangla - Native</li>
-              <li>Arabic - Fluent</li>
-            </ul>
+            <hr className="h-1 my-2 bg-orange-600 w-80" />
+
+            <div className="flex flex-col gap-4 mt-5">
+              <div>
+                <h4 className="text-2xl  ">American Management Association</h4>
+                <h6 className="text-sm text-gray-700 ">
+                  19/10/1990 - 20/12/1994
+                </h6>
+              </div>
+              <div>
+                <h4 className="text-2xl  ">American Management Association</h4>
+                <h6 className="text-sm text-gray-700 ">
+                  19/10/1990 - 20/12/1994
+                </h6>
+              </div>
+              <div>
+                <h4 className="text-2xl  ">American Management Association</h4>
+                <h6 className="text-sm text-gray-700 ">
+                  19/10/1990 - 20/12/1994
+                </h6>
+              </div>
+            </div>
           </div>
         </div>
       </div>
