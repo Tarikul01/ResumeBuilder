@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 const DashboardLayout = ({ children }) => {
   const [toggle, setToggle] = useState(false);
-  console.log(toggle);
   return (
     <div className="flex justify-start items-start ">
       {" "}
