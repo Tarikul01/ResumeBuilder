@@ -30,6 +30,23 @@ const userSchema = new mongoose.Schema({
         required:true,
         default:"free"
     },
+    skills:[{
+        type:mongoose.Types.ObjectId,
+        ref:"skill"
+    }],
+    experience:[{
+        type:mongoose.Types.ObjectId,
+        ref:"exp"
+    }],
+    education:[{
+        type:mongoose.Types.ObjectId,
+        ref:"edu"
+    }],
+    about:[{
+        type:mongoose.Types.ObjectId,
+        ref:"about"
+    }]
+
 
 },{timestamps:true,versionKey:false})
 

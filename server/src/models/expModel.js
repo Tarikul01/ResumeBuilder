@@ -18,6 +18,10 @@ const expSchema = new mongoose.Schema({
     quit_Date:{
         type:Date,
         required:true
+    },
+    userID:{
+        type:mongoose.Types.ObjectId,
+        ref:"User"
     }
 
 },{timestamps:true,versionKey:false})

@@ -9,8 +9,10 @@ exports.auth=(req,res,next)=>{
         else {
             // console.log(decoded)
             let email=decoded['email']
-            // console.log(email)
+            let id=decoded['id']
+            console.log(id)
             req.headers.email=email
+            req.headers._id=id
             next()
         }
     })

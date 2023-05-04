@@ -8,6 +8,10 @@ const skillSchema = new mongoose.Schema({
     skillItem:{
         type:String,
         required:true
+    },
+    userID:{
+        type:mongoose.Types.ObjectId,
+        ref:"User"
     }
 
 
