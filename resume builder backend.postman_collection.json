@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "4bb65025-ec5b-4c84-ac76-842e982492ec",
+		"name": "resume builder backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\":\"manik@gmail.com\",\r\n    \"password\":\"1234\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{resume}}/signin",
+							"host": [
+								"{{resume}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All User",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MzFhZTdmMmQ4NzdiZWJmYTk2NmFhZiIsImVtYWlsIjoibmFpbUBnbWFpbC5jb20iLCJpYXQiOjE2ODExNDI2ODcsImV4cCI6MTY4MTIyOTA4N30.MOgpchPWrxiW4Sx3nlZ4YxHbTd_kL7HrI5nBetd8ufA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Naim\",\r\n    \"lastName\":\"Hossain\",\r\n    \"email\":\"naim@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"mobile\":\"01688371189\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{resume}}/update",
+							"host": [
+								"{{resume}}"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SKILLS",
+			"item": [
+				{
+					"name": "Add Skill",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MzFhZTdmMmQ4NzdiZWJmYTk2NmFhZiIsImVtYWlsIjoibmFpbUBnbWFpbC5jb20iLCJpYXQiOjE2ODI4NzQ5ODIsImV4cCI6MTY4Mjk2MTM4Mn0.L1nLhGEs2DbXVaKFd4gvW7m1_0j8jeOV0yEoxLXa1IM",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"skillTitle\":\"Font End Developer\",\r\n    \"skillItem\":\"React js\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{resume}}/skillAdd",
+							"host": [
+								"{{resume}}"
+							],
+							"path": [
+								"skillAdd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Skill",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Skill",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EDUCATIONS",
+			"item": [
+				{
+					"name": "Add Education",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NTFmN2YzZWFmMDg3ODUxNDkwNjQ1ZSIsImVtYWlsIjoibWFuaWtAZ21haWwuY29tIiwiaWF0IjoxNjgzMTgzMjU5LCJleHAiOjE2ODMyNjk2NTl9.lhhpwDLEu2cWo6luKtfx_92sQDV_CEB1xWNb6YsHnyQ",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Subject\":\" HSC Commers \",\r\n    \"Passing_year\":\"2016\",\r\n    \"Academy\":\"Madaripur Govt collage\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{resume}}/eduAdd",
+							"host": [
+								"{{resume}}"
+							],
+							"path": [
+								"eduAdd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Education",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\":\"\",\r\n    \"Subject\":\" HSC Commers \",\r\n    \"Passing_year\":\"2016\",\r\n    \"Academy\":\"Madaripur Govt collage\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Education",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EXPERIENCES",
+			"item": [
+				{
+					"name": "Add Experience",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Experience",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Find Experience",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "resume",
+			"value": "http://localhost:9000/api/v1",
+			"type": "default"
+		}
+	]
+}
