@@ -20,11 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36170a38-3209-4731-8294-924925896de9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/middleware/authVerifyMiddle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/controllers/detailsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Utility/CreateToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Utility/CreateToken.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/middleware/authVerifyMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/middleware/authVerifyMiddle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/UserModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/aboutSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/aboutModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/eduModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/eduModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/expModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/expModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/models/skillModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/skillModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/routers/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routers/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +77,13 @@
       <workItem from="1680897555505" duration="170000" />
       <workItem from="1680947634155" duration="3793000" />
       <workItem from="1680953265405" duration="15123000" />
-      <workItem from="1681138727263" duration="3530000" />
+      <workItem from="1681138727263" duration="4315000" />
+      <workItem from="1681971792783" duration="641000" />
+      <workItem from="1682576348685" duration="91000" />
+      <workItem from="1682755053042" duration="4168000" />
+      <workItem from="1682873942913" duration="9851000" />
+      <workItem from="1683092795915" duration="2783000" />
+      <workItem from="1683182381639" duration="4909000" />
     </task>
     <servers />
   </component>
@@ -93,6 +103,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="568" y="227" key="#Notifications" timestamp="1682874403167">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="568" y="227" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1682874403167" />
     <state x="184" y="9" key="SettingsEditor" timestamp="1680897666332">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

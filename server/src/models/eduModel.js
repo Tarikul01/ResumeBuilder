@@ -13,6 +13,10 @@ const eduSchema = new mongoose.Schema({
         type:String,
         required:true,
         trim:true
+    },
+    userID:{
+        type:mongoose.Types.ObjectId,
+        ref:"User"
     }
 
 },{timestamps:true,versionKey:false})

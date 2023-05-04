@@ -1,6 +1,6 @@
 const mongoose =require("mongoose")
 
-const aboutSchema = new mongoose.Schema({
+const aboutModel = new mongoose.Schema({
     Present_add:{
         type:String,
         required:true
@@ -13,9 +13,13 @@ const aboutSchema = new mongoose.Schema({
         type:String,
         required:true,
         trim:true
+    },
+    userID:{
+        type:mongoose.Types.ObjectId,
+        ref:"User"
     }
 
 },{timestamps:true,versionKey:false})
 
-module.exports = mongoose.model("about",aboutSchema)
+module.exports = mongoose.model("about",aboutModel)
 

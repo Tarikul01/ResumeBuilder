@@ -38,6 +38,26 @@ exports.Signin= async (req,res)=>{
     }
 }
 
+exports.findUser = async (req, res) => {
+    let Query ={}
+    let Projections={ password: 0 }
+    try {
+        const user = await UserSchema.find(Query,Projections).populate("skills","skillTitle skillItem").populate("education","Subject Passing_year Academy")
+        if(!user){
+            return res.status(404).json({status: 'fail',message: 'User not found'})
+        }
+        await res.status(200).json({status:' Success',data: user})
+
+    }
+    catch (error) {
+        if(error){
+            return  res.status(500).json({status: 'error',data:error.message});
+        }
+        console.log(error)
+
+    }
+}
+
 exports.Update =async (req,res) => {
     let email=req.headers.email
     console.log("email"+email)
