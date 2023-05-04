@@ -54,50 +54,10 @@ mongoose.connect(MONGO_URL, options, (err) => {
 
 
 
-//Handling CORS
-/*
-app.use((req, res, next) => {
-  const devUrls = [
-    'http://localhost:5000',
-    'http://bholabarassociation.com'
-  ]
-  const prodUrls = [
-    'http://localhost:5000',
-    'http://bholabarassociation.com',
-    'http://bholabarassociation.com:3000',
-    'http://66.29.130.89',
-    'http://66.29.130.89:3000'
-  ]
-  const allowedOrigins =
-    process.env.NODE_ENV === 'DEV' ? devUrls
-      : process.env.NODE_ENV === 'PROD' ? prodUrls
-        : []
-
-  const origin = req.headers.origin || "";
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-  res.header("Access-Control-Allow-Methods", "GET, PUT, DELETE, OPTIONS");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-
-  return next();
-});
-*/
 
 
 // Managing backend routing 
 app.use("/api/v1", router);
 
-// Front End Taggin 
-// app.use(express.static('client/build'));
-// app.get("*",(req,res)=>{
-//   res.sendFile(path.resolve(__dirname,'client','build','index.html'));
-  
-// })
 
 module.exports = app;
