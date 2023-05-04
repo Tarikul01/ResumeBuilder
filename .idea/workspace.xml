@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="36170a38-3209-4731-8294-924925896de9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/src/middleware/authVerifyMiddle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/Utility/CreateToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Utility/CreateToken.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/routers/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routers/api.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2O0rmwHZqSPvZYIAg3oP11tuU3A" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Ostad MERN Course\ResumeBuilder\server\src\models" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="36170a38-3209-4731-8294-924925896de9" name="Default Changelist" comment="" />
+      <created>1680708502178</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680708502178</updated>
+      <workItem from="1680708505246" duration="1311000" />
+      <workItem from="1680862532422" duration="2592000" />
+      <workItem from="1680896071326" duration="18000" />
+      <workItem from="1680896099413" duration="1336000" />
+      <workItem from="1680897555505" duration="170000" />
+      <workItem from="1680947634155" duration="3793000" />
+      <workItem from="1680953265405" duration="15123000" />
+      <workItem from="1681138727263" duration="3530000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="9" key="SettingsEditor" timestamp="1680897666332">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1680897666332" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1680952458549">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1680952458549" />
+  </component>
+</project>
