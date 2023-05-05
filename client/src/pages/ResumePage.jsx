@@ -1,5 +1,6 @@
 import React from "react";
 import FeatureItem from "../components/FeatureItem";
+import MasterLayout from "../components/MasterLayout/MasterLayout";
 
 const ResumePage = () => {
   const resumesData = [
@@ -102,25 +103,27 @@ const ResumePage = () => {
     },
   ];
   return (
-    <section className="py-20">
-      <div className="container mx-auto">
-        <div>
-          <h1 className="text-3xl font-semibold">Resume Templates</h1>
-          <p className="text-gray-500">/0-5 years of experience</p>
-          <hr className="my-4 bg-indigo-400 w-20 p-[2px]" />
-        </div>
+    <MasterLayout>
+      <section className="py-20 ">
+        <div className="container mx-auto">
+          <div className="pt-20">
+            <h1 className="text-3xl font-semibold">Resume Templates</h1>
+            <p className="text-gray-500">/0-5 years of experience</p>
+            <hr className="my-4 bg-indigo-400 w-20 p-[2px]" />
+          </div>
 
-        <div className="w-full mt-12 flex flex-wrap justify-center gap-10">
-          {resumesData.map((item, i) => {
-            const { imgURL, type, desc } = item;
-            console.log(imgURL);
-            return (
-              <FeatureItem key={i} imgURL={imgURL} type={type} desc={desc} />
-            );
-          })}
+          <div className="w-full mt-12 flex flex-wrap justify-center gap-10">
+            {resumesData.map((item, i) => {
+              const { imgURL, type, desc } = item;
+              console.log(imgURL);
+              return (
+                <FeatureItem key={i} imgURL={imgURL} type={type} desc={desc} />
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </MasterLayout>
   );
 };
 
