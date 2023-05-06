@@ -8,7 +8,7 @@ import {
 } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
 import SignUpPage from "../pages/SignUpPage";
 import Modal from "./Modal";
@@ -22,7 +22,9 @@ const Navbar = () => {
       <nav className="h-20 w-full flex flex-row justify-center items-center bg-indigo-400 z-[99999] fixed">
         <div className="container px-5 md:px-0 flex justify-between items-center ">
           <div>
-            <h1 className="font-semibold">ResumeCraft</h1>
+            <NavLink to="/">
+              <h1 className="text-white font-semibold">ResumeCraft</h1>
+            </NavLink>
           </div>
           <div className="hidden lg:block">
             <ul className="list-none flex items-center gap-6 text-white">

@@ -3,7 +3,10 @@ import { AiFillLinkedin, AiOutlineMail, AiOutlineMobile } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 const Template0 = () => {
   return (
-    <div className="w-[1080px] h-auto container mx-auto my-10 bg-gray-700 ">
+    <div
+      id="pdf-generator"
+      className="w-[1080px] h-auto container mx-auto my-10 bg-gray-700 "
+    >
       <div className="px-16 py-10 flex justify-between items-center">
         <div className="w-[60%]">
           <h1 className="text-4xl font-bold text-white">John Doe</h1>
