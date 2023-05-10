@@ -20,15 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36170a38-3209-4731-8294-924925896de9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/controllers/detailsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/controllers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/controllers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/middleware/authVerifyMiddle.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/middleware/authVerifyMiddle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/models/UserModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/UserModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/aboutSchema.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/aboutModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/eduModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/eduModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/expModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/expModel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/models/skillModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/models/skillModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/routers/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routers/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +82,8 @@
       <workItem from="1682873942913" duration="9851000" />
       <workItem from="1683092795915" duration="2783000" />
       <workItem from="1683182381639" duration="4909000" />
+      <workItem from="1683385877250" duration="1167000" />
+      <workItem from="1683725976165" duration="12139000" />
     </task>
     <servers />
   </component>

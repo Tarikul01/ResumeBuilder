@@ -10,8 +10,12 @@ router.get("/findUser",userController.findUser)
 router.post("/signup",userController.Signup)
 router.post("/signin",userController.Signin)
 router.post("/update",authVerifyMiddleware.auth,userController.Update)
+router.get("/forget-password",userController.forgetPassword)
+router.get("/reset-password",userController.resetPassword)
+
 
 //Details Functions routes
+
 //skills routes
 router.get("/findSkill",authVerifyMiddleware.auth,detailsController.skillFind)
 router.post("/skillAdd",authVerifyMiddleware.auth,detailsController.AddSkill)

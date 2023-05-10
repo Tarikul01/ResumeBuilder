@@ -45,7 +45,11 @@ const userSchema = new mongoose.Schema({
     about:[{
         type:mongoose.Types.ObjectId,
         ref:"about"
-    }]
+    }],
+    token:{
+        type:String,
+        default:""
+    }
 
 
 },{timestamps:true,versionKey:false})

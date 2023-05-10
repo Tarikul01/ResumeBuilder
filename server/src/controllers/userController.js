@@ -2,6 +2,48 @@ const UserSchema = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 
+const nodeMailer = require('nodemailer')
+const random=require('randomstring')
+require('dotenv').config();
+
+//Node Mailer
+const userResetPassService= async (name,email ,token,req,res) => {
+    try {
+        let testAccount = await nodeMailer.createTestAccount();
+
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodeMailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false, // true for 465, false for other ports
+            // requireTLS: true,
+            auth: {
+                user: process.env.emailUser,
+                pass: process.env.emailPassword
+            },
+        });
+        let sentOptions = {
+            from: process.env.emailUser,
+            to: email,
+            subject: "reset password",
+            html: `Hi ${name} . This is your reset password link <a href="https://localhost:9000/api/v1/reset-password?token=${token}">"https://localhost:9000/api/v1/reset-password?token=${token}" </a> click here to reset your password or copy and paste`
+        };
+       return  transporter.sendMail(sentOptions,(error,info)=>{
+            if (error){
+                console.log(error);
+            }
+            else{
+                console.log("mail sent successfully"+info.response);
+            }
+        })
+    }
+    catch (error) {
+       return res.status(400).json({status: 'error',error: error.message});
+    }
+}
+
+//user resisters
+
 exports.Signup= async (req,res)=>{
     const {firstName,lastName,email,password,mobile} =req.body
     try {
@@ -17,6 +59,8 @@ exports.Signup= async (req,res)=>{
         console.log(error)
     }
 }
+
+//user singing
 
 exports.Signin= async (req,res)=>{
     const data =req.body
@@ -38,6 +82,8 @@ exports.Signin= async (req,res)=>{
     }
 }
 
+//find users
+
 exports.findUser = async (req, res) => {
     let Query ={}
     let Projections={ password: 0 }
@@ -58,6 +104,7 @@ exports.findUser = async (req, res) => {
     }
 }
 
+//update user
 exports.Update =async (req,res) => {
     let email=req.headers.email
     console.log("email"+email)
@@ -74,5 +121,48 @@ exports.Update =async (req,res) => {
     }
     catch (err) {
         console.log(err)
+    }
+}
+
+//forget password
+
+exports.forgetPassword = async (req,res)=>{
+    let email =req.body.email
+    try {
+        const userData= await UserSchema.findOne({ email})
+        if (userData){
+            const randomString=random.generate()
+            console.log(randomString)
+            const data = await UserSchema.updateOne({ email:email},{$set:{token:randomString}},{upsert:true})
+            let name=userData.firstName
+            await userResetPassService(name,email,randomString)
+            return res.status(200).json({"status":"success",message:"please check your email"})
+
+        }
+        else {
+           return  res.status(404).json({message:"user not found"})
+        }
+    }
+    catch(error) {
+           return  res.status(400).json({message:"error: " + error})
+    }
+}
+
+exports.resetPassword =async (req,res)=>{
+    try {
+        const token=req.query.token
+        const tokenData= await UserSchema.findOne({token:token})
+        if (tokenData){
+            const password=req.body.password
+            const hashPass = await bcrypt.hash(password,10)
+            const data =await UserSchema.findByIdAndUpdate({_id:tokenData._id},{$set:{password:hashPass,token:""}},{new:true})
+            return res.status(200).json({status:"Password Reset Successes",data:data})
+        }
+        else{
+          return  res.status(404).json({"status":"Failed","message":"token expired"})
+        }
+    }
+    catch (error) {
+       return  res.status(400).json({"status":"something went wrong","message":error})
     }
 }
