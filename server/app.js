@@ -57,14 +57,11 @@ mongoose.connect(MONGO_URL, options, (err) => {
 app.use((req, res, next) => {
   const devUrls = [
     'http://localhost:5000',
-    'http://bholabarassociation.com'
+    'http://127.0.0.1:5173'
   ]
   const prodUrls = [
     'http://localhost:5000',
-    'http://bholabarassociation.com',
-    'http://bholabarassociation.com:3000',
-    'http://66.29.130.89',
-    'http://66.29.130.89:3000'
+    'http://127.0.0.1:5173'
   ]
   const allowedOrigins =
     process.env.NODE_ENV === 'DEV' ? devUrls

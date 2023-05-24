@@ -3,6 +3,7 @@ const router = express.Router();
 const userController=require("../controllers/usersController");
 const taskController=require("../controllers/tasksController")
 const AuthVerifyMiddleware = require("../middleware/AuthVerifyMiddleware");
+const { createResume, getResume, updateResume } = require("../controllers/resumeController");
 
 // User Actions Routes 
 router.post("/registration",userController.registration);
@@ -27,6 +28,9 @@ router.get("/taskStatusCount",AuthVerifyMiddleware,taskController.taskStatusCoun
 
 
 
+router.post("/resume/create/:type", createResume)
+router.get("/resume/:type", getResume)
+router.get("/resume/update/:type", updateResume)
 
 
 

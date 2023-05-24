@@ -2,17 +2,96 @@ const UserModel = require("../models/UserModel");
 const jwt = require("jsonwebtoken");
 const OTPModel = require("../models/OTPModel");
 const SendEmailUtility = require("../Utility/SendMailerUtility");
+// const hashPassword = require("../helpers/auth");
+const bcrypt = require("bcrypt");
+const { comparePassword, hashPassword } = require("../helpers/auth");
+const cloudinary = require("../Utility/cloudinary");
 
 // Registration
-exports.registration = (req, res) => {
-  let reqBody = req.body;
-  UserModel.create(reqBody, (err, data) => {
-    if (err) {
-      res.status(200).json({ status: "fail", data: err });
-    } else {
-      res.status(200).json({ status: "success", data: data });
+exports.registration = async(req, res) => {
+  try {
+    const { firstName, lastName, email, password, photo } = req.body[0];
+    console.log(req.body);
+    if (!firstName.trim()) {
+        return res.json({status:400,
+            error:"First name is required"})
     }
-  });
+    if (!lastName.trim()) {
+        return res.json({status:400,
+            error:"Last name is required"})
+    }
+    if (!email) {
+        return res.json({
+            status:400,
+
+            error:"Email is required"
+        })
+    }
+    if (!password || password.length<6) {
+        return res.json({
+            status:400,
+            error:"Password must be at least 6 characters long"
+        })
+    }
+
+    const existingUser = await UserModel.findOne({ email })
+    if (existingUser) {
+        return res.json({
+            status:400,
+
+            error:"Email is taken"
+        })
+    }
+  //  const hashPassword = (password) => {
+  //     console.log(password);
+  //     return new Promise((resolve, reject) => {
+  //         bcrypt.genSalt(12, (err, salt) => {
+  //             if (err) {
+  //                 reject(err)
+  //             }
+  //             bcrypt.hash(password, salt, (err, hash) => {
+  //                 if (err) {
+  //                     reject(err)
+  //                 }
+  //                 resolve(hash)
+  //             })
+  //         })
+  //     })
+  //  }
+   const hashedPassword = await hashPassword(password)
+
+    if (photo) {
+    const result = await cloudinary.uploader.upload(photo, {
+        upload_preset: "resumeUser",
+    });
+
+    if (result) {
+        const user = await new UserModel({
+            firstName,
+            lastName,
+          email,
+            photo:result.url,
+            password:hashedPassword
+        }).save()
+
+        const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+            expiresIn:"7d",
+        })
+
+        res.json({
+            user: {
+                name: `${user.firstName +" "+ user.lastName}`,
+                email: user.email,
+            },
+            token
+
+        })
+    }
+  }
+
+} catch(err) {
+    console.log(err);
+}
 };
 
 exports.profileUpdate = (req, res) => {
@@ -30,43 +109,55 @@ exports.profileUpdate = (req, res) => {
 
 // Login
 exports.login = (req, res) => {
-  let reqBody = req.body;
-  UserModel.aggregate(
-    [
-      { $match: reqBody },
-      {
-        $project: {
-          _id: 0,
-          email: 1,
-          firstName: 1,
-          lastName: 1,
-          mobile: 1,
-          photo: 1,
-        },
-      },
-    ],
-    (err, data) => {
-      if (err) {
-        res.status(400).json({ status: "fail", data: err });
-      } else {
-        console.log(data);
-        if (data.length > 0) {
-          let Payload = {
-            exp: Math.floor(Date.now() / 1000) * (24 * 60 * 60),
-            data: data[0]["email"],
-          };
-          let token = jwt.sign(Payload, "SecretKey123456789");
-          res
-            .status(200)
-            .json({ status: "success", token: token, data: data[0] });
-        } else {
-          res.status(400).json({ status: "unauthorized" });
-        }
-      }
-    }
-  );
-};
+  const { email, password } = req.body;
+  if (!email) {
+    return res.json({
+      status: 400,
+      error: "Enter an email"
+    })
+  }
+  if (!password || password.length < 6) {
+    return res.json({
+      status: 400,
 
+      error: "Password must be at least 6 characters long"
+    })
+  };
+
+
+  UserModel.findOne({ email }, (err, data) => {
+    try {
+        if (!err) {
+            const match = comparePassword(password, data.password)
+            if (!match) {
+                res.json({
+                    status:400,
+
+                    error:"Password is incorrect"
+                })
+            } else {
+                let Payload = { exp: Math.floor(Date.now() / 1000) * (24 * 60 * 60), data: data["email"] }
+                let token = jwt.sign(Payload, process.env.JWT_SECRET)
+                res.json({
+                    status:200,
+
+                    message: "Login Success",
+                    data:data,
+                    token
+                })
+            }
+       }
+    } catch {
+            res.json({
+                status:400,
+
+               error:"User not found"
+            })
+    }
+   
+  })
+  
+}
 exports.profileDetails = (req, res) => {
   let email = req.headers["email"];
   UserModel.aggregate(
